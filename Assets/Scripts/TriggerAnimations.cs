@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
 public class TriggerAnimations : MonoBehaviour
 {
     public Animator pacStudentAnimator;
@@ -10,48 +11,48 @@ public class TriggerAnimations : MonoBehaviour
     public Animator recoveringStateAnimator;
     public Animator deadStateAnimator;
 
+    private bool animationTriggered = false;  
+
     void Start()
     {
-        if (pacStudentAnimator != null) pacStudentAnimator.enabled = false;
-        if (powerPelletsAnimator != null) powerPelletsAnimator.enabled = false;
-        if (walkingStateAnimator != null) walkingStateAnimator.enabled = false;
-        if (scaredStateAnimator != null) scaredStateAnimator.enabled = false;
-        if (recoveringStateAnimator != null) recoveringStateAnimator.enabled = false;
-        if (deadStateAnimator != null) deadStateAnimator.enabled = false;
+        DisableAutoPlay();
+    }
+
+    void DisableAutoPlay()
+    {
+        if (pacStudentAnimator != null) pacStudentAnimator.StopPlayback();
+        if (powerPelletsAnimator != null) powerPelletsAnimator.StopPlayback();
+        if (walkingStateAnimator != null) walkingStateAnimator.StopPlayback();
+        if (scaredStateAnimator != null) scaredStateAnimator.StopPlayback();
+        if (recoveringStateAnimator != null) recoveringStateAnimator.StopPlayback();
+        if (deadStateAnimator != null) deadStateAnimator.StopPlayback();
     }
 
     public void OnPlayButtonClicked()
     {
-        if (pacStudentAnimator != null)
+        if (!animationTriggered)  
         {
-            pacStudentAnimator.enabled = true;
-            pacStudentAnimator.SetTrigger("Play");
+            EnableAndPlayAnimators();
+            animationTriggered = true;  
         }
-        if (powerPelletsAnimator != null)
+    }
+
+    void EnableAndPlayAnimators()
+    {
+        TriggerAnimator(pacStudentAnimator);
+        TriggerAnimator(powerPelletsAnimator);
+        TriggerAnimator(walkingStateAnimator);
+        TriggerAnimator(scaredStateAnimator);
+        TriggerAnimator(recoveringStateAnimator);
+        TriggerAnimator(deadStateAnimator);
+    }
+
+    void TriggerAnimator(Animator animator)
+    {
+        if (animator != null)
         {
-            powerPelletsAnimator.enabled = true;
-            powerPelletsAnimator.SetTrigger("Play");
-        }
-        if (walkingStateAnimator != null)
-        {
-            walkingStateAnimator.enabled = true;
-            walkingStateAnimator.SetTrigger("Play");
-        }
-        if (scaredStateAnimator != null)
-        {
-            scaredStateAnimator.enabled = true;
-            scaredStateAnimator.SetTrigger("Play");
-        }
-        if (recoveringStateAnimator != null)
-        {
-            recoveringStateAnimator.enabled = true;
-            recoveringStateAnimator.SetTrigger("Play");
-        }
-        if (deadStateAnimator != null)
-        {
-            deadStateAnimator.enabled = true;
-            deadStateAnimator.SetTrigger("Play");
+            animator.enabled = true;  
+            animator.SetTrigger("PlayAnimation");  
         }
     }
 }
-
