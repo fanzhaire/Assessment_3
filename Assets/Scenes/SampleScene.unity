@@ -1472,7 +1472,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000011444, y: -211}
+  m_AnchoredPosition: {x: 4.9, y: -159.1}
   m_SizeDelta: {x: 198.4589, y: 67.4716}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &613097607
@@ -1522,6 +1522,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1189812923}
         m_TargetAssemblyTypeName: AudioManagerScript, Assembly-CSharp
         m_MethodName: PlayIntro
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1965444213}
+        m_TargetAssemblyTypeName: TriggerAnimations, Assembly-CSharp
+        m_MethodName: OnPlayButtonClicked
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5437,6 +5449,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1965444212}
+  - component: {fileID: 1965444213}
   m_Layer: 0
   m_Name: Animations and Animators
   m_TagString: Untagged
@@ -5452,7 +5465,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1965444211}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 15.47, y: 8.47, z: -0.39060703}
+  m_LocalPosition: {x: -5.24, y: 8.14, z: -0.39060703}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5465,6 +5478,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1965444213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1965444211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 546b042027f8bd24d81f18057ae13b83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pacStudentAnimator: {fileID: 693365525}
+  powerPelletsAnimator: {fileID: 1245930216}
+  walkingStateAnimator: {fileID: 2088629001}
+  scaredStateAnimator: {fileID: 719630880}
+  recoveringStateAnimator: {fileID: 593906131}
+  deadStateAnimator: {fileID: 1739276308}
 --- !u!1 &1970407093
 GameObject:
   m_ObjectHideFlags: 0
