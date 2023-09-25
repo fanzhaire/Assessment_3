@@ -17677,6 +17677,7 @@ MonoBehaviour:
   scaredStateAnimator: {fileID: 719630880}
   recoveringStateAnimator: {fileID: 593906131}
   deadStateAnimator: {fileID: 1739276308}
+  playButton: {fileID: 613097607}
 --- !u!1 &1970407093
 GameObject:
   m_ObjectHideFlags: 0
