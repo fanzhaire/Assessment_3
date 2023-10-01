@@ -14,7 +14,8 @@ public class MapDisplayToggle : MonoBehaviour
     public TextMeshProUGUI visualAssetsText;  
     public TextMeshProUGUI topLeftCornerPieceText;
     public Button backButton;
-
+    public GameObject levelContainer;
+    public Button procedurallevelButton;
     void Start()
     {
         if (manualMapButton != null)
@@ -37,24 +38,24 @@ public class MapDisplayToggle : MonoBehaviour
         }
 
         // Initially, set 'theWholeLevel' to inactive, and others to active.
-        SetObjectsActive(false, true, true, true, true, true, true, true, true, true);
+        SetObjectsActive(false, true, true, true, true, true, true, true, true, true,true,true);
     }
 
     public void ToggleMapDisplay()
     {
-        SetObjectsActive(true, false, false, false, false, false, false, false, false, false);
+        SetObjectsActive(true, false, false, false, false, false, false, false, false, false,false,false);
         if (backButton != null) backButton.gameObject.SetActive(true);  
     }
 
     public void ReturnToPreviousView()  
     {
-        SetObjectsActive(false, true, true, true, true, true, true, true, true, true);
+        SetObjectsActive(false, true, true, true, true, true, true, true, true, true,true,true);
         if (backButton != null) backButton.gameObject.SetActive(false);  
     }
 
     void SetObjectsActive(bool mapActive, bool visualAssetsActive, bool animationsActive, bool levelLayoutActive,
                           bool manualButtonActive, bool playButtonActive, bool mapDisplayButtonActive,
-                          bool animationTextActive, bool visualAssetsTextActive, bool topLeftCornerPieceTextActive)
+                          bool animationTextActive, bool visualAssetsTextActive, bool topLeftCornerPieceTextActive, bool levelContainer, bool procedurallevelButton)
     {
         if (theWholeLevel != null) theWholeLevel.SetActive(mapActive);
         if (visualAssetsSprites != null) visualAssetsSprites.SetActive(visualAssetsActive);
@@ -66,6 +67,8 @@ public class MapDisplayToggle : MonoBehaviour
         if (animationText != null) animationText.gameObject.SetActive(animationTextActive);
         if (visualAssetsText != null) visualAssetsText.gameObject.SetActive(visualAssetsTextActive);
         if (topLeftCornerPieceText != null) topLeftCornerPieceText.gameObject.SetActive(topLeftCornerPieceTextActive);
+        if (this.levelContainer != null) this.levelContainer.SetActive(levelContainer);
+        if (this.procedurallevelButton != null) this.procedurallevelButton.gameObject.SetActive(procedurallevelButton);
     }
 }
 
