@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class AudioManagerScript : MonoBehaviour
 {
-    public AudioClip gameintro;  // 修改变量名
-    public AudioClip ghostsnormalstate;  // 修改变量名
+    public AudioClip gameintro;  
+    public AudioClip ghostsnormalstate;  
     private AudioSource audioSource;
 
     private void Awake()
