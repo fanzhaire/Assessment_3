@@ -9,7 +9,7 @@ public class TriggerAnimations : MonoBehaviour
     public Animator scaredStateAnimator;
     public Animator recoveringStateAnimator;
     public Animator deadStateAnimator;
-    public Animator PacstudentdeadAnimator;
+    public Animator deathpacAnimator;
     public Button playButton;
 
     void Start()
@@ -30,7 +30,7 @@ public class TriggerAnimations : MonoBehaviour
         if (scaredStateAnimator != null) scaredStateAnimator.enabled = false;
         if (recoveringStateAnimator != null) recoveringStateAnimator.enabled = false;
         if (deadStateAnimator != null) deadStateAnimator.enabled = false;
-        if (PacstudentdeadAnimator != null) PacstudentdeadAnimator.enabled = false;
+        if (deathpacAnimator != null) deathpacAnimator.enabled = false;
     }
 
     public void OnPlayButtonClicked()
@@ -70,10 +70,10 @@ public class TriggerAnimations : MonoBehaviour
             deadStateAnimator.enabled = true;
             deadStateAnimator.Play("A Dead state");
         }
-        if (PacstudentdeadAnimator != null)
+        if (deathpacAnimator != null)  
         {
-            PacstudentdeadAnimator.enabled = true;
-            PacstudentdeadAnimator.Play("Pacstudentdead");
+            deathpacAnimator.enabled = true;
+            deathpacAnimator.Play("deadthpac");  
         }
     }
 }
